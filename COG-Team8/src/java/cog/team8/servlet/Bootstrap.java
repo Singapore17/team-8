@@ -74,13 +74,15 @@ public class Bootstrap extends HttpServlet {
             Bid bid3 = new Bid(42.05, person3);
             myBids.add(bid3);
 
-            ServletContext context = request.getSession().getServletContext();
+            ServletContext context = getServletContext();
             context.setAttribute("myJobs", myJobs);
             context.setAttribute("avaliableJobs", avaliableJobs);
             context.setAttribute("users", users);
             context.setAttribute("ratings", ratings);
             context.setAttribute("bidders", bidders);
             context.setAttribute("myBids", myBids);
+            
+            context.setAttribute("temp", "temp");
         }
     }
 

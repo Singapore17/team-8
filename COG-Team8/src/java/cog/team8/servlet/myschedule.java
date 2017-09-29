@@ -42,6 +42,7 @@ public class myschedule extends HttpServlet {
                 ArrayList<Job> results = (ArrayList<Job>) context.getAttribute("myJobs");
                 System.out.println(results.size());
                 obj.put("my_jobs", results);
+            System.out.println(context.getAttribute("name"));
             out.print(obj.toJSONString());
         }
     }
