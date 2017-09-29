@@ -81,13 +81,7 @@ public class Bootstrap extends HttpServlet {
             context.setAttribute("users", users);
             context.setAttribute("ratings", ratings);
             context.setAttribute("bidders", bidders);
-<<<<<<< HEAD
-            context.setAttribute("myBids", myBids);   
-            context.setAttribute("temp", "temp");
-            
-=======
             context.setAttribute("myBids", myBids);
->>>>>>> f71cf3cfcec19b74cf446ffd2092accf0d92155a
         }
     }
 

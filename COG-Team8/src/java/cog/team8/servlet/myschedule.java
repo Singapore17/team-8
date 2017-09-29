@@ -6,6 +6,7 @@
 package cog.team8.servlet;
 
 import cog.team8.entities.Job;
+import cog.team8.entities.Bid;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -42,8 +43,30 @@ public class myschedule extends HttpServlet {
                 ArrayList<Job> results = (ArrayList<Job>) context.getAttribute("myJobs");
                 for(Job job: results) {
                     JSONObject jObject = new JSONObject();
+                    JSONObject bObject = new JSONObject();
+                    ArrayList<Bid> bidders = job.getBidders();
                     jObject.put("start_time", job.getStartTime());
                     jObject.put("end_time", job.getEndTime());
+                    jObject.put("date", job.getDate());
+                    jObject.put("comment", job.getComments());
+                    jObject.put("title",job.getTitle());
+                    jObject.put("description", job.getDescription());
+                    for(Bid bidder: bidders) {
+                        bObject.put("bidpoint", bidder.getBidpoints());
+                        JSONObject bidperson = new JSONObject();
+                        bidperson.put("name", bidder.getBidder().getName());
+                        bidperson.put("language", bidder.getBidder().getName());
+                    }
+                    JSONObject bidowner = new JSONObject();
+                        bidowner.put("name", job.getOwner().getName());
+                        bidowner.put("language", job.getOwner().getLanguage());
+                    if(job.getWinner() != null) {
+                        JSONObject bidwinner = new JSONObject();
+                        bidwinner.put("name", job.getWinner().getBidpoints());
+                        JSONObject bidwinnerperson = new JSONObject();
+                        bidwinnerperson.put("name", job.getWinner().getBidder().getName());
+                        bidwinnerperson.put("language", job.getWinner().getBidder().getName());
+                    }
                     list.add(jObject);
                 }
                 obj.put("my_jobs", list);
