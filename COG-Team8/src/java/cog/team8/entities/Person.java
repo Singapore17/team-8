@@ -9,9 +9,6 @@ package cog.team8.entities;
  * @author Tan Kee Hock
  */
 
-enum Language {
-    CHINESE, ENGLISH;
-}
 public class Person {
     private String name;
     private String password;
