@@ -57,6 +57,7 @@ public class Bootstrap extends HttpServlet {
             Job myJob1 = new Job(person2, "07:00","19:00","30 September 2017", "He likes chicken rice.", "Take care of my daughter during my working hours", "I will be out for a business meeting for the entire day. I need somebody to help me take care of my child");
             Bid myJob1Bid = new Bid(10.40, person1);
             myJob1.addBid(myJob1Bid);
+            myJobs.add(myJob1);
 
 
             ArrayList<Rating> ratings = new ArrayList<Rating>();
@@ -81,8 +82,6 @@ public class Bootstrap extends HttpServlet {
             context.setAttribute("ratings", ratings);
             context.setAttribute("bidders", bidders);
             context.setAttribute("myBids", myBids);
-            
-            context.setAttribute("temp", "temp");
         }
     }
 
