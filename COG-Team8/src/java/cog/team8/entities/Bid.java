@@ -7,7 +7,9 @@ package cog.team8.entities;
 
 /**
  *
- * @author Tan Kee Hock
+ * @author LiXiaowei
  */
 public class Bid {
+    Double bidpoints;
+    Person bidder;
 }
