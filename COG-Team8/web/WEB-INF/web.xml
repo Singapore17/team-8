@@ -20,6 +20,10 @@
         <servlet-name>bootstrap</servlet-name>
         <servlet-class>cog.team8.servlet.Bootstrap</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>NewJob</servlet-name>
+        <servlet-class>cog.team8.servlet.NewJob</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>myschedule</servlet-name>
         <url-pattern>/myschedule</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>bootstrap</servlet-name>
         <url-pattern>/bootstrap</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NewJob</servlet-name>
+        <url-pattern>/NewJob</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

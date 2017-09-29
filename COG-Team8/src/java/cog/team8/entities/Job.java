@@ -33,6 +33,11 @@ public class Job {
         this.description = description;
     }
 
+    @Override
+    public String toString() {
+        return "Job{" + "owner=" + owner + ", bidders=" + bidders + ", startTime=" + startTime + ", endTime=" + endTime + ", date=" + date + ", winner=" + winner + ", comments=" + comments + ", title=" + title + ", description=" + description + '}';
+    }
+
     public Person getOwner() {
         return owner;
     }
