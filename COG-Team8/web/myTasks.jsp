@@ -1,3 +1,14 @@
+<%-- 
+    Document   : myTasks.jsp
+    Created on : Sep 29, 2017, 2:47:51 PM
+    Author     : Tan Kee Hock
+--%>
+
+<%@page import="cog.team8.entities.Job"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.ArrayList"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -320,11 +331,9 @@
                                 <span class="menu-arrow arrow_carrot-right"></span>
                             </a>
                             <ul class="sub">                         
-                                <li><a class="" href="myTasks.jsp">My Tasks</a></li>
+                                <li><a class="" href="myTasks.html">My Tasks</a></li>
                                 <li><a class="" href="availableJobs.html">Available Jobs</a></li>
                                 <li><a class="" href="myBiddings.html">My Bidding</a></li>
-                                <li><a class="" href="mySchedule.html">My Schedule</a></li>
-                                <li><a class="" href="community.html">My Communities</a></li>
                             </ul>
                         </li>       
                     </ul>
@@ -471,7 +480,7 @@
                                 Tasks Created
                             </div>
                             <div class="panel-body">
-                                <b>Task 1:</b><p>2 children on 25 October 2017, 9am-6pm</p>
+                                <b>Task 1:</b><p>Fetch Adric from school on 25 October 2017, 01800: 1900</p>
                                 <div class="padd">
                                     <table class="col-lg-12 table">
                                         <thead>
@@ -520,7 +529,22 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                <b>Task 2:</b><p>2 children on 18 October 2017, 9am-6pm</p>
+                                <%
+                                    ServletContext context = session.getServletContext();
+                                    ArrayList<Job> jobs = (ArrayList<Job>) context.getAttribute("avaliableJobs");
+                                    int i = 2;
+                                    for(Job job: jobs) {
+                                        if(job.getOwner().getName().equals("Chen Xiao Mei")) {
+                                            out.print("<b>Task " + i + ":</b><p>" + job.getTitle() + ", on " + job.getDate() + " " + job.getStartTime() + " - " + job.getEndTime() + "</p>");
+                                            i++;
+                                            
+                                            out.print("<table class=\"col-lg-12 table\"><thead><tr><th>#</th><th>First Name</th><th>Last Name</th><th>Location</th><th>Fees (per hr)</th><th></th></tr></thead><tbody>");
+                                            out.print("<tr><td colspan=\"4\">No Bids yet</td></tr></tbody></table>");
+                                        }
+                                    }
+                                    
+                                %>
+<!--                                <b>Task 2:</b><p>2 children on 18 October 2017, 9am-6pm</p>
                                 <div class="padd">
                                     <table class="col-lg-12 table">
                                         <thead>
@@ -568,7 +592,7 @@
                                             </tr>
                                         </tbody>
                                     </table>
-                                </div>
+                                </div>-->
                             </div>
                         </div>
                     </div>
