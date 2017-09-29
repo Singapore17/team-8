@@ -66,48 +66,35 @@ var Script = function () {
         },
         events: [
             {
-                title: 'All Day Event',
+                title: 'Child Giving at Hougang Ave 1',
                 start: new Date(y, m, 1)
             },
             {
-                title: 'Long Event',
+                title: 'Child Giving at Sengkang Street 21',
                 start: new Date(y, m, d-5),
                 end: new Date(y, m, d-2)
             },
             {
-                id: 999,
-                title: 'Repeating Event',
-                start: new Date(y, m, d-3, 16, 0),
-                allDay: false
-            },
-            {
-                id: 999,
-                title: 'Repeating Event',
+                title: 'Child Seeking',
                 start: new Date(y, m, d+4, 16, 0),
                 allDay: false
             },
             {
-                title: 'Meeting',
+                title: 'Child Giving at Bedok Street 50',
                 start: new Date(y, m, d, 10, 30),
                 allDay: false
             },
             {
-                title: 'Lunch',
+                title: 'Child Giving at Punggol North Ave 1',
                 start: new Date(y, m, d, 12, 0),
                 end: new Date(y, m, d, 14, 0),
                 allDay: false
             },
             {
-                title: 'Birthday Party',
-                start: new Date(y, m, d+1, 19, 0),
-                end: new Date(y, m, d+1, 22, 30),
-                allDay: false
-            },
-            {
-                title: 'Click for Google',
+                title: 'Child Giving at Sengkang Ave 2',
                 start: new Date(y, m, 28),
                 end: new Date(y, m, 29),
-                url: 'http://google.com/'
+                allDay: false
             }
         ]
     });
