@@ -9,6 +9,10 @@ package cog.team8.entities;
  *
  * @author LiXiaowei
  */
+import java.util.ArrayList;
 public class Post {
+    private String content;
+    private Job job;
+    private ArrayList<String> comments;
     
 }

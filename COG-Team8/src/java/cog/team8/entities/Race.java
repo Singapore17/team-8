@@ -9,6 +9,6 @@ package cog.team8.entities;
  *
  * @author LiXiaowei
  */
-public class Race {
-    
+public enum Race {
+    CHINESE, INDIAN, MALAY, OTHERS;
 }
