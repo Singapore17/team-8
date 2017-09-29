@@ -41,7 +41,10 @@ public class myschedule extends HttpServlet {
                 JSONArray list = new JSONArray();
                 ArrayList<Job> results = (ArrayList<Job>) context.getAttribute("myJobs");
                 for(Job job: results) {
-                    list.add(job);
+                    JSONObject jObject = new JSONObject();
+                    jObject.put("start_time", job.getStartTime());
+                    jObject.put("end_time", job.getEndTime());
+                    list.add(jObject);
                 }
                 obj.put("my_jobs", list);
             out.print(obj.toJSONString());
