@@ -9,7 +9,10 @@ package cog.team8.entities;
  *
  * @author LiXiaowei
  */
-public class Bid {
-    Double bidpoints;
-    Person bidder;
+import java.util.ArrayList;
+public class Post {
+    private String content;
+    private Job job;
+    private ArrayList<String> comments;
+    
 }

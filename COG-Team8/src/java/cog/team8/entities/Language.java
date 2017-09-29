@@ -9,7 +9,6 @@ package cog.team8.entities;
  *
  * @author LiXiaowei
  */
-public class Bid {
-    Double bidpoints;
-    Person bidder;
+public enum Language {
+    CHINESE, ENGLISH;
 }
