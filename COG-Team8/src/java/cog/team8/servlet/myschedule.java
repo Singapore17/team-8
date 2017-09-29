@@ -11,6 +11,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 
 /**
  *
@@ -31,16 +33,17 @@ public class myschedule extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet myschedule</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet myschedule at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+                JSONObject obj = new JSONObject();
+                obj.put("name", "mkyong.com");
+                obj.put("age", new Integer(100));
+
+                JSONArray list = new JSONArray();
+                list.add("msg 1");
+                list.add("msg 2");
+                list.add("msg 3");
+
+                obj.put("messages", list);
+                out.print(obj.toJSONString());
         }
     }
 
