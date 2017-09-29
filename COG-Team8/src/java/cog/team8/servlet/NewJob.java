@@ -80,8 +80,8 @@ public class NewJob extends HttpServlet {
         
         try (PrintWriter out = response.getWriter()) {
             JSONObject obj = new JSONObject();
-            String startTime = request.getParameter("start-time");
-            String endTime = request.getParameter("end-time");
+            String startTime = request.getParameter("startTime");
+            String endTime = request.getParameter("endTime");
             String date = request.getParameter("date");
             String description = request.getParameter("description");
             String title = request.getParameter("title");
@@ -90,8 +90,10 @@ public class NewJob extends HttpServlet {
             Job job = new Job(person, startTime, endTime, date, comments, title, description);
             ServletContext context = request.getSession().getServletContext();
             ArrayList<Job> results = (ArrayList<Job>) context.getAttribute("avaliableJobs");
+            results.add(job);
             context.setAttribute("avaliableJobs", results);
             obj.put("status", "success");
+            System.out.println("Inserted Job: " + job);
             out.println(obj.toJSONString());
         }
     }
