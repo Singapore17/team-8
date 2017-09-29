@@ -13,20 +13,56 @@ import java.util.ArrayList;
  */
 
 public class Job {
+    private Person owner;
     private ArrayList<Bid> bidders;
     private String startTime;
     private String endTime;
     private String date;
     private Bid winner;
     private String comments = "";
+    private String title;
+    private String description;
     
-    public Job(String startTime, String endTime, String date, String comments) {
+    public Job(Person owner, String startTime, String endTime, String date, String comments, String title, String description) {
+        this.owner = owner;
         this.startTime = startTime;
         this.endTime = endTime;
         this.date = date;
         this.comments = comments;
+        this.title = title;
+        this.description = description;
     }
 
+    public Person getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Person owner) {
+        this.owner = owner;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    
+    
+    public void addBid(Bid bid){
+        bidders.add(bid);
+    }
+    
     public ArrayList<Bid> getBidders() {
         return bidders;
     }

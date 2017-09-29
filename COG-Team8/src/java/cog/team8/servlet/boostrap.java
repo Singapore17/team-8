@@ -7,7 +7,9 @@ package cog.team8.servlet;
 
 import cog.team8.entities.Bid;
 import cog.team8.entities.Job;
+import cog.team8.entities.Language;
 import cog.team8.entities.Person;
+import cog.team8.entities.Race;
 import cog.team8.entities.Rating;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -36,18 +38,46 @@ public class boostrap extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        ArrayList<Job> jobs = new ArrayList<Job>();
-        ArrayList<Job> avaliableJobs = new ArrayList<Job>();
+        //Adding users        
         ArrayList<Person> users = new ArrayList<Person>();
+        Person person1 = new Person("Chen Xiao Wei", "passowrd", "Hougang", Race.CHINESE, Language.CHINESE);
+        Person person2 = new Person("Liu Yi Fei", "passowrd", "Hougang", Race.CHINESE, Language.CHINESE);
+        Person person3 = new Person("Fatimah Mohamad", "passowrd", "Hougang", Race.CHINESE, Language.ENGLISH);
+        users.add(person1);
+        users.add(person2);
+        users.add(person3);
+        
+        ArrayList<Job> avaliableJobs = new ArrayList<Job>();
+        Job job1 = new Job(person3, "18:00","19:00","29 September 2017", "My son cannot take chilli.", "Fetch my son from school", "My son will be finishing school 6pm on that day ");
+        avaliableJobs.add(job1);
+        
+        ArrayList<Job> myJobs = new ArrayList<Job>();
+        Job myJob1 = new Job(person2, "07:00","19:00","30 September 2017", "He likes chicken rice.", "Take care of my daughter during my working hours", "I will be out for a business meeting for the entire day. I need somebody to help me take care of my child");
+        Bid myJob1Bid = new Bid(10.40, person1);
+        myJob1.addBid(myJob1Bid);
+        
+        
         ArrayList<Rating> ratings = new ArrayList<Rating>();
-        ArrayList<Bid> bids = new ArrayList<Bid>();
+        Job ratingJob = new Job(person3, "12:00","13:00","10 August 2017", "Nil", "Fetch my son to his grandparents' place after school", "My son needs someone to bring him from school to his grandparents' place.");
+        Rating rating1 = new Rating(ratingJob, person2, person3, 4);
+        ratings.add(rating1);
+
+        ArrayList<Bid> bidders = new ArrayList<Bid>();
+        Bid bid1 = new Bid(35.30, person1);
+        Bid bid2 = new Bid(42.05, person2);
+        bidders.add(bid1);
+        bidders.add(bid2);
+        
         ArrayList<Bid> myBids = new ArrayList<Bid>();
+        Bid bid3 = new Bid(42.05, person3);
+        myBids.add(bid3);
+        
         ServletContext context = request.getSession().getServletContext();
-        context.setAttribute("jobs", jobs);
-        context.setAttribute("avaliableJobs", jobs);
+        context.setAttribute("myJobs", myJobs);
+        context.setAttribute("avaliableJobs", avaliableJobs);
         context.setAttribute("users", users);
         context.setAttribute("ratings", ratings);
-        context.setAttribute("bids", bids);
+        context.setAttribute("bidders", bidders);
         context.setAttribute("myBids", myBids);
     }
 

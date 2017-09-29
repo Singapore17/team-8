@@ -38,7 +38,7 @@ public class mybids extends HttpServlet {
             JSONObject obj = new JSONObject();
             ServletContext context = request.getSession().getServletContext();
             JSONArray list = new JSONArray();
-            obj.put("my_bids", (ArrayList) context.getAttribute(""));
+            obj.put("my_bids", (ArrayList) context.getAttribute("myBids"));
             out.print(obj.toJSONString());
         }
     }

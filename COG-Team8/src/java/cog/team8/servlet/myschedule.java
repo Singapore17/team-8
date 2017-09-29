@@ -38,8 +38,8 @@ public class myschedule extends HttpServlet {
                 JSONObject obj = new JSONObject();
                 ServletContext context = request.getSession().getServletContext();
                 JSONArray list = new JSONArray();
-                obj.put("jobs", (ArrayList) context.getAttribute("jobs"));
-                out.print(obj.toJSONString());
+                obj.put("my_jobs", (ArrayList) context.getAttribute("myJobs"));
+            out.print(obj.toJSONString());
         }
     }
 
