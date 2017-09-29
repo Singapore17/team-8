@@ -8,9 +8,7 @@ package cog.team8.entities;
  *
  * @author Tan Kee Hock
  */
-enum Race {
-    CHINESE, INDIAN, MALAY, OTHERS;
-}
+
 enum Language {
     CHINESE, ENGLISH;
 }
