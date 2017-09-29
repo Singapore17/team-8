@@ -11,14 +11,14 @@ package cog.team8.entities;
  */
 public class Rating {
     private Job job;
-    private Person provider;
-    private Person rater;
+    private Person rateReceiver;
+    private Person raceProvider;
     private int rating;
 
     public Rating(Job job, Person provider, Person rater, int rating) {
         this.job = job;
-        this.provider = provider;
-        this.rater = rater;
+        this.rateReceiver = provider;
+        this.raceProvider = rater;
         this.rating = rating;
     }
 
@@ -26,12 +26,12 @@ public class Rating {
         return job;
     }
 
-    public Person getProvider() {
-        return provider;
+    public Person getRateReceiver() {
+        return rateReceiver;
     }
 
-    public Person getRater() {
-        return rater;
+    public Person getRaceProvider() {
+        return raceProvider;
     }
 
     public int getRating() {
@@ -42,12 +42,12 @@ public class Rating {
         this.job = job;
     }
 
-    public void setProvider(Person provider) {
-        this.provider = provider;
+    public void setRateReceiver(Person rateReceiver) {
+        this.rateReceiver = rateReceiver;
     }
 
-    public void setRater(Person rater) {
-        this.rater = rater;
+    public void setRaceProvider(Person raceProvider) {
+        this.raceProvider = raceProvider;
     }
 
     public void setRating(int rating) {
@@ -56,7 +56,7 @@ public class Rating {
 
     @Override
     public String toString() {
-        return "Rating{" + "job=" + job + ", provider=" + provider + ", rater=" + rater + ", rating=" + rating + '}';
+        return "Rating{" + "job=" + job + ", provider=" + rateReceiver + ", rater=" + raceProvider + ", rating=" + rating + '}';
     }
     
     
