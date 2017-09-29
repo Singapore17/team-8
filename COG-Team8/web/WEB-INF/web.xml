@@ -4,9 +4,41 @@
         <servlet-name>myschedule</servlet-name>
         <servlet-class>cog.team8.servlet.myschedule</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>mybidders</servlet-name>
+        <servlet-class>cog.team8.servlet.mybidders</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>avaliablejobs</servlet-name>
+        <servlet-class>cog.team8.servlet.avaliablejobs</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>mybids</servlet-name>
+        <servlet-class>cog.team8.servlet.mybids</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>boostrap</servlet-name>
+        <servlet-class>cog.team8.servlet.boostrap</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>myschedule</servlet-name>
         <url-pattern>/myschedule</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>mybidders</servlet-name>
+        <url-pattern>/mybidders</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>avaliablejobs</servlet-name>
+        <url-pattern>/avaliablejobs</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>mybids</servlet-name>
+        <url-pattern>/mybids</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>boostrap</servlet-name>
+        <url-pattern>/boostrap</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

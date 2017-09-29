@@ -5,6 +5,10 @@
  */
 package cog.team8.servlet;
 
+import cog.team8.entities.Bid;
+import cog.team8.entities.Job;
+import cog.team8.entities.Person;
+import cog.team8.entities.Rating;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -13,14 +17,12 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
 
 /**
  *
  * @author Tan Kee Hock
  */
-public class myschedule extends HttpServlet {
+public class boostrap extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,13 +36,19 @@ public class myschedule extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-                JSONObject obj = new JSONObject();
-                ServletContext context = request.getSession().getServletContext();
-                JSONArray list = new JSONArray();
-                obj.put("jobs", (ArrayList) context.getAttribute("jobs"));
-                out.print(obj.toJSONString());
-        }
+        ArrayList<Job> jobs = new ArrayList<Job>();
+        ArrayList<Job> avaliableJobs = new ArrayList<Job>();
+        ArrayList<Person> users = new ArrayList<Person>();
+        ArrayList<Rating> ratings = new ArrayList<Rating>();
+        ArrayList<Bid> bids = new ArrayList<Bid>();
+        ArrayList<Bid> myBids = new ArrayList<Bid>();
+        ServletContext context = request.getSession().getServletContext();
+        context.setAttribute("jobs", jobs);
+        context.setAttribute("avaliableJobs", jobs);
+        context.setAttribute("users", users);
+        context.setAttribute("ratings", ratings);
+        context.setAttribute("bids", bids);
+        context.setAttribute("myBids", myBids);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

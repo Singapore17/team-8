@@ -20,7 +20,7 @@ import org.json.simple.JSONObject;
  *
  * @author Tan Kee Hock
  */
-public class myschedule extends HttpServlet {
+public class mybidders extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,11 +35,11 @@ public class myschedule extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-                JSONObject obj = new JSONObject();
-                ServletContext context = request.getSession().getServletContext();
-                JSONArray list = new JSONArray();
-                obj.put("jobs", (ArrayList) context.getAttribute("jobs"));
-                out.print(obj.toJSONString());
+            JSONObject obj = new JSONObject();
+            ServletContext context = request.getSession().getServletContext();
+            JSONArray list = new JSONArray();
+            obj.put("bidders", (ArrayList) context.getAttribute("bidders"));
+            out.print(obj.toJSONString());
         }
     }
 
