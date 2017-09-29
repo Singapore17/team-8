@@ -57,6 +57,7 @@ public class Bootstrap extends HttpServlet {
             Job myJob1 = new Job(person2, "07:00","19:00","30 September 2017", "He likes chicken rice.", "Take care of my daughter during my working hours", "I will be out for a business meeting for the entire day. I need somebody to help me take care of my child");
             Bid myJob1Bid = new Bid(10.40, person1);
             myJob1.addBid(myJob1Bid);
+            myJobs.add(myJob1);
 
 
             ArrayList<Rating> ratings = new ArrayList<Rating>();
@@ -74,7 +75,7 @@ public class Bootstrap extends HttpServlet {
             Bid bid3 = new Bid(42.05, person3);
             myBids.add(bid3);
 
-            ServletContext context = request.getSession().getServletContext();
+            ServletContext context = getServletContext();
             context.setAttribute("myJobs", myJobs);
             context.setAttribute("avaliableJobs", avaliableJobs);
             context.setAttribute("users", users);

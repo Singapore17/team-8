@@ -40,8 +40,10 @@ public class myschedule extends HttpServlet {
                 ServletContext context = request.getSession().getServletContext();
                 JSONArray list = new JSONArray();
                 ArrayList<Job> results = (ArrayList<Job>) context.getAttribute("myJobs");
-                System.out.println(results.size());
-                obj.put("my_jobs", results);
+                for(Job job: results) {
+                    list.add(job);
+                }
+                obj.put("my_jobs", list);
             out.print(obj.toJSONString());
         }
     }
