@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 public class Job {
     private Person owner;
-    private ArrayList<Bid> bidders;
+    private ArrayList<Bid> bidders = new ArrayList<Bid>();
     private String startTime;
     private String endTime;
     private String date;

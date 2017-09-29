@@ -5,6 +5,7 @@
  */
 package cog.team8.servlet;
 
+import cog.team8.entities.Job;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -38,7 +39,9 @@ public class myschedule extends HttpServlet {
                 JSONObject obj = new JSONObject();
                 ServletContext context = request.getSession().getServletContext();
                 JSONArray list = new JSONArray();
-                obj.put("my_jobs", (ArrayList) context.getAttribute("myJobs"));
+                ArrayList<Job> results = (ArrayList<Job>) context.getAttribute("myJobs");
+                System.out.println(results.size());
+                obj.put("my_jobs", results);
             out.print(obj.toJSONString());
         }
     }

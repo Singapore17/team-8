@@ -17,8 +17,8 @@
         <servlet-class>cog.team8.servlet.mybids</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>boostrap</servlet-name>
-        <servlet-class>cog.team8.servlet.boostrap</servlet-class>
+        <servlet-name>bootstrap</servlet-name>
+        <servlet-class>cog.team8.servlet.Bootstrap</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>myschedule</servlet-name>
@@ -37,8 +37,8 @@
         <url-pattern>/mybids</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>boostrap</servlet-name>
-        <url-pattern>/boostrap</url-pattern>
+        <servlet-name>bootstrap</servlet-name>
+        <url-pattern>/bootstrap</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
