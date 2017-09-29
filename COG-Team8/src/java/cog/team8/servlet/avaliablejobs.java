@@ -8,6 +8,7 @@ package cog.team8.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.logging.Logger;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -37,7 +38,8 @@ public class avaliablejobs extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             JSONObject obj = new JSONObject();
             ServletContext context = request.getSession().getServletContext();
-            JSONArray list = new JSONArray();
+            JSONArray list = new JSONArray(); 
+  
             obj.put("avaliable_jobs", (ArrayList) context.getAttribute("avaliableJobs"));
             out.print(obj.toJSONString());
         }
