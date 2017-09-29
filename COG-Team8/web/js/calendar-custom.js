@@ -85,12 +85,6 @@ var Script = function () {
                 allDay: false
             },
             {
-                title: 'Child Giving at Punggol North Ave 1',
-                start: new Date(y, m, d, 12, 0),
-                end: new Date(y, m, d, 14, 0),
-                allDay: false
-            },
-            {
                 title: 'Child Giving at Sengkang Ave 2',
                 start: new Date(y, m, 28),
                 end: new Date(y, m, 29),
